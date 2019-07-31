@@ -1,0 +1,435 @@
+@charset "UTF-8";
+/*NanumSquare.scss*/
+@font-face {
+  font-family: "nsL";
+  font-display: swap;
+  /* auto, block, swap, fallback, optional */
+  src: url(../fonts/NanumSquareL.woff) format("woff"), url(../fonts/NanumSquareL.ttf) format("truetype"); }
+
+@font-face {
+  font-family: "nsR";
+  font-display: swap;
+  /* auto, block, swap, fallback, optional */
+  src: url(../fonts/NanumSquareR.woff2) format("woff2"), url(../fonts/NanumSquareR.woff) format("woff"), url(../fonts/NanumSquareR.ttf) format("truetype"); }
+
+@font-face {
+  font-family: "nsB";
+  font-display: swap;
+  /* auto, block, swap, fallback, optional */
+  src: url(../fonts/NanumSquareB.woff2) format("woff2"), url(../fonts//NanumSquareB.woff) format("woff"), url(../fonts/NanumSquareB.ttf) format("truetype"); }
+
+@font-face {
+  font-family: "nsE";
+  font-display: swap;
+  /* auto, block, swap, fallback, optional */
+  src: url(../fonts/NanumSquareEB.woff2) format("woff2"), url(../fonts//NanumSquareEB.woff) format("woff"), url(../fonts/NanumSquareEB.ttf) format("truetype"); }
+
+/*크롬과 파이어폭스 브라우저에서 글자에 안티앨리어싱이 적용*/
+/* Reset CSS
+ * --------------------------------------- */
+html, body {
+  height: 100%;
+  min-height: 100%;
+  -webkit-text-size-adjust: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: 'nsR',-apple-system,Roboto,Arial,"Noto Sans",sans-serif;
+  -webkit-transform: skew(-0.03deg);
+  -ms-transform: skew(-0.03deg);
+  transform: skew(-0.03deg);
+  /*크롬나눔고딕깨지는현상보정*/
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0); }
+
+*, *:before, *:after {
+  -webkit-box-sizing: inherit;
+  -moz-box-sizing: inherit;
+  box-sizing: inherit; }
+
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre,
+form, fieldset, input, textarea, p, blockquote, th, td {
+  padding: 0;
+  margin: 0; }
+
+a {
+  text-decoration: none; }
+
+table {
+  border-spacing: 0; }
+
+fieldset, img {
+  border: 0; }
+
+address, caption, cite, code, dfn, em, strong, th, var {
+  font-weight: normal;
+  font-style: normal; }
+
+strong {
+  font-weight: bold; }
+
+ol, ul {
+  list-style: none;
+  margin: 0;
+  padding: 0; }
+
+caption, th {
+  text-align: left; }
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: normal;
+  font-size: 100%;
+  margin: 0;
+  padding: 0;
+  color: #f2f2f2; }
+
+q:before, q:after {
+  content: ''; }
+
+abbr, acronym {
+  border: 0; }
+
+.blind {
+  position: absolute;
+  top: -9999px;
+  left: -9999px;
+  visibility: hidden;
+  width: 0;
+  height: 0;
+  overflow: hidden; }
+
+.wrap {
+  position: relative;
+  min-width: 320px;
+  width: 100%;
+  height: 100%;
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
+  background: #fff; }
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
+  z-index: 10; }
+
+.header .inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 40px; }
+
+.header .inner:after {
+  content: '';
+  display: block;
+  clear: both; }
+
+.header .header-logo {
+  float: left;
+  margin: 38px 0 0 0;
+  width: 80px;
+  height: 25px;
+  background: url("../img/logo.png") no-repeat 0 0;
+  background-size: 80px 25px;
+  text-indent: -999em; }
+
+.header .nav {
+  float: right;
+  margin: 38px 0 0 0;
+  font-size: 16px; }
+
+.header .nav .nav-list:after {
+  content: '';
+  display: block;
+  clear: both; }
+
+.header .nav .nav-list > li {
+  float: left; }
+
+.header .nav .nav-list > li > a {
+  position: relative;
+  display: block;
+  padding: 0 40px;
+  font-family: 'SpoqaB';
+  font-size: 20px;
+  line-height: 20px;
+  color: #fff; }
+
+.header .nav .nav-list > li > a:after {
+  content: '';
+  position: absolute;
+  top: 1px;
+  right: 0;
+  display: inline-block;
+  width: 1px;
+  height: 15px;
+  background: rgba(255, 255, 255, 0.3); }
+
+.header .nav .nav-list .cerfi > a {
+  padding-right: 26px;
+  background: url("../image/v2/ico_cerfi.png") no-repeat 100% 50%;
+  background-size: 16px auto;
+  font-family: 'SpoqaR';
+  font-size: 16px;
+  line-height: 17px; }
+
+.header .nav .nav-list .cerfi > a:after {
+  display: none; }
+
+.header.fixed {
+  position: fixed;
+  background: rgba(255, 255, 255, 0.9);
+  -webkit-box-shadow: 0 2px 5px 0 rgba(125, 125, 125, 0.3);
+  box-shadow: 0 2px 5px 0 rgba(125, 125, 125, 0.3);
+  z-index: 99; }
+
+.header.fixed .header-logo {
+  background: url("../image/v2/logo_finnq_fixed.png") no-repeat 0 0;
+  background-size: 80px 25px; }
+
+.header.fixed .nav .nav-list > li > a {
+  color: #222; }
+
+.header.fixed .nav .nav-list > li > a:after {
+  background: rgba(0, 0, 0, 0.3); }
+
+.header.fixed .nav .nav-list .cerfi > a {
+  color: #222;
+  background: url("../image/v2/ico_cerfi_fixed.png") no-repeat 100% 50%;
+  background-size: 16px auto; }
+
+.header .sub-menu {
+  opacity: 0; }
+
+.header .sub-menu ul {
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  min-width: auto; }
+
+.header .sub-menu ul > li {
+  padding: 0 20px;
+  float: left; }
+
+.header .sub-menu ul > li > a {
+  position: relative;
+  color: #fff;
+  font-family: 'SpoqaR';
+  font-size: 14px;
+  line-height: 45px; }
+
+.header .sub-menu ul > li > a:hover,
+.header .sub-menu ul > li.is-on > a {
+  font-family: 'SpoqaB'; }
+
+.header .sub-menu ul > li > a:after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: -22px;
+  margin-top: -2px;
+  display: inline-block;
+  width: 4px;
+  height: 4px;
+  border-radius: 3px;
+  background: #fff; }
+
+.header .sub-menu ul > li:last-child > a:after {
+  display: none; }
+
+.sub-open .header {
+  background: rgba(255, 255, 255, 0.9);
+  -webkit-box-shadow: 0 2px 5px 0 rgba(125, 125, 125, 0.3);
+  box-shadow: 0 2px 5px 0 rgba(125, 125, 125, 0.3);
+  z-index: 99; }
+
+.sub-open .header .header-logo {
+  background: url("../image/v2/logo_finnq_fixed.png") no-repeat 0 0;
+  background-size: 80px auto; }
+
+.sub-open .header .nav .nav-list > li > a {
+  color: #5008b2; }
+
+.sub-open .header .nav .nav-list > li > a:after {
+  background: rgba(0, 0, 0, 0.3); }
+
+.sub-open .header .nav .nav-list .cerfi > a {
+  color: #222;
+  background: url("../image/v2/ico_cerfi_fixed.png") no-repeat 100% 50%;
+  background-size: 16px auto; }
+
+.sub-open .header .nav .sub-menu {
+  display: block;
+  opacity: 1;
+  position: absolute;
+  top: 100px;
+  left: 0;
+  right: 0;
+  background: rgba(80, 8, 178, 0.9);
+  height: 45px; }
+
+.sub-open .header .nav .sub-menu ul {
+  opacity: 1; }
+
+.pp-section {
+  height: 100%;
+  position: absolute;
+  width: 100%;
+  /* fixes flickering in firefox*/
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden; }
+
+.pp-easing {
+  -webkit-transition: all 1000ms cubic-bezier(0.55, 0.085, 0, 0.99);
+  -moz-transition: all 1000ms cubic-bezier(0.55, 0.085, 0, 0.99);
+  -o-transition: all 1000ms cubic-bezier(0.55, 0.085, 0, 0.99);
+  transition: all 1000ms cubic-bezier(0.55, 0.085, 0, 0.99);
+  /* custom */
+  -webkit-transition-timing-function: cubic-bezier(0.55, 0.085, 0, 0.99);
+  -moz-transition-timing-function: cubic-bezier(0.55, 0.085, 0, 0.99);
+  -o-transition-timing-function: cubic-bezier(0.55, 0.085, 0, 0.99);
+  transition-timing-function: cubic-bezier(0.55, 0.085, 0, 0.99);
+  /* custom */ }
+
+#pp-nav {
+  position: fixed;
+  z-index: 100;
+  margin-top: -32px;
+  top: 50%;
+  opacity: 1; }
+
+#pp-nav.right {
+  right: 17px; }
+
+#pp-nav.left {
+  left: 17px; }
+
+.pp-section.pp-table {
+  display: table; }
+
+.pp-tableCell {
+  display: table-cell;
+  vertical-align: middle;
+  width: 100%;
+  height: 100%; }
+
+.pp-slidesNav {
+  position: absolute;
+  z-index: 4;
+  left: 50%;
+  opacity: 1; }
+
+.pp-slidesNav.bottom {
+  bottom: 17px; }
+
+.pp-slidesNav.top {
+  top: 17px; }
+
+#pp-nav ul,
+.pp-slidesNav ul {
+  margin: 0;
+  padding: 0; }
+
+#pp-nav li,
+.pp-slidesNav li {
+  display: block;
+  width: 14px;
+  height: 13px;
+  margin: 7px;
+  position: relative; }
+
+.pp-slidesNav li {
+  display: inline-block; }
+
+#pp-nav li a,
+.pp-slidesNav li a {
+  display: block;
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  text-decoration: none; }
+
+#pp-nav li .active span,
+.pp-slidesNav .active span {
+  background: #fff; }
+
+#pp-nav span,
+.pp-slidesNav span {
+  top: 2px;
+  left: 2px;
+  width: 8px;
+  height: 8px;
+  border: 1px solid #000;
+  background: rgba(0, 0, 0, 0);
+  border-radius: 50%;
+  position: absolute;
+  z-index: 1; }
+
+.pp-tooltip {
+  position: absolute;
+  top: -2px;
+  color: #fff;
+  font-size: 14px;
+  font-family: arial, helvetica, sans-serif;
+  white-space: nowrap;
+  max-width: 220px; }
+
+.pp-tooltip.right {
+  right: 20px; }
+
+.pp-tooltip.left {
+  left: 20px; }
+
+.pp-scrollable {
+  overflow-y: scroll;
+  height: 100%; }
+
+.section {
+  text-align: center; }
+
+#myVideo {
+  position: absolute;
+  z-index: 4;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background-size: 100% 100%;
+  background-color: black;
+  background-position: center center;
+  background-size: contain;
+  -o-object-fit: cover;
+  object-fit: cover; }
+
+#section1 .layer {
+  position: absolute;
+  z-index: 5;
+  width: 100%;
+  left: 0;
+  top: 43%;
+  height: 100%; }
+
+#section1 h1 {
+  color: #fff; }
+
+#infoMenu li a {
+  color: #fff; }
+
+#section1 {
+  overflow: hidden; }
+
+#section2,
+#section3 {
+  background-size: 100% 100%; }
+
+#section3 {
+  background-image: url(../img/bg1.jpg); }
