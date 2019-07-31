@@ -1,6 +1,8 @@
 var deleteLog = false;
   
 $(document).ready(function() {
+    var body_m = $('html, body');
+    body_m.css('overflow','hidden');
     $('#pagepiling').pagepiling({
         menu: '.nav-list',
         anchors: ['page1', 'page2', 'page3', 'page4' , 'page5'],
