@@ -5,6 +5,9 @@ $(document).ready(function() {
         menu: '.nav-list',
         anchors: ['page1', 'page2', 'page3', 'page4' , 'page5'],
         sectionsColor: ['#fff', '#2ebe21', '#2C3E50', '#51bec4', '#2C3E50'],
+        verticalCentered: true,
+        css3: true,
+        keyboardScrolling: true,
         navigation: {
                 'textColor': '#f2f2f2',
                 'bulletsColor': '#ccc',
