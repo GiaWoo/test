@@ -36,7 +36,7 @@ $(function() {
     function getScrollifySectionIndex(anchor){
         var idpanel = false;
         $('section').each(function(i){
-            if( jQuery(this).data('section-name') == anchor.toString().replace(/#/g,"") ){
+            if( $(this).data('section-name') == anchor.toString().replace(/#/g,"") ){
             idpanel = i;
             }
         });
