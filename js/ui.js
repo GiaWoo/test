@@ -1,30 +1,46 @@
-var deleteLog = false;
-  
-$(document).ready(function() {
-    var body_m = $('html, body');
-    body_m.css('overflow','hidden');
-    $('#pagepiling').pagepiling({
-        menu: '.nav-list',
-        anchors: ['page1', 'page2', 'page3', 'page4' , 'page5'],
-        sectionsColor: ['#fff', '#2ebe21', '#2C3E50', '#51bec4', '#2C3E50'],
-        verticalCentered: true,
-        css3: false,
-        keyboardScrolling: true,
-        navigation: {
-                'textColor': '#f2f2f2',
-                'bulletsColor': '#ccc',
-                'position': 'right',
-                'tooltips': ['Page 1', 'Page 2', 'Page 3', 'Page 4', 'Page 5']
-        },
-        onLeave: function(index, nextIndex, direction){
-            if(index == 1){
-                $('.header').addClass('fixed');
-             }
-             //back to the 1st section
-             if(nextIndex == 1){
-                 $('.header').removeClass('fixed');
-             }
+$(function() {
+    $.scrollify({
+      section:".section",
+      sectionName:false,
+      interstitialSection:".footer",
+      offset: 0,
+      scrollbars:false,
+      standardScrollElements: "",
+      updateHash: true,
+      touchScroll: true,
+      easing: "easeOutExpo",
+      scrollSpeed: 800,
+      before:function(i,panels) {
+        var ref = panels[i].attr("data-section-name");
+        $(".gnb .active").removeClass("active");
+        $(".gnb").find("a[href=\"#" + ref + "\"]").parents('li').addClass("active");
+
+        if($.scrollify.current().attr('data-section-name')=="second")
+        {
+            $('.header').addClass('fixed');
         }
+        if($.scrollify.current().attr('data-section-name')=="first")
+        {
+            $('.header').removeClass('fixed');
+        }
+        if($.scrollify.current().attr('data-section-name')=="five")
+        {
+            $('.gnb li:last-child').addClass("active");
+        }
+
+      },
     });
-   $('#pagepiling').pagepiling.setAllowScrolling(false);
+    $(".gnb li a").on("click",function() {
+        $.scrollify.move( getScrollifySectionIndex( $(this).attr("href") ) );
+    });
+    function getScrollifySectionIndex(anchor){
+        var idpanel = false;
+        $('section').each(function(i){
+            if( jQuery(this).data('section-name') == anchor.toString().replace(/#/g,"") ){
+            idpanel = i;
+            }
+        });
+        return idpanel;
+    };
 });
+  
