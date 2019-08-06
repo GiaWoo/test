@@ -12,8 +12,8 @@ $(function() {
       scrollSpeed: 800,
       before:function(i,panels) {
         var ref = panels[i].attr("data-section-name");
-        $(".gnb .active").removeClass("active");
-        $(".gnb").find("a[href=\"#" + ref + "\"]").parents('li').addClass("active");
+        $(".navbar-nav .active").removeClass("active");
+        $(".navbar-nav").find("a[href=\"#" + ref + "\"]").parents('li').addClass("active");
 
         if($.scrollify.current().attr('data-section-name')=="second")
         {
@@ -25,12 +25,12 @@ $(function() {
         }
         if($.scrollify.current().attr('data-section-name')=="five")
         {
-            $('.gnb li:last-child').addClass("active");
+            $('.navbar-nav li:last-child').addClass("active");
         }
 
       },
     });
-    $(".gnb li a").on("click",function() {
+    $(".navbar-nav li a").on("click",function() {
         $.scrollify.move( getScrollifySectionIndex( $(this).attr("href") ) );
     });
     function getScrollifySectionIndex(anchor){
