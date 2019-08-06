@@ -133,7 +133,10 @@ body {
     box-shadow: 0 2px 5px 0 rgba(125, 125, 125, 0.3); }
   .header .navbar-light .navbar-nav li.active a {
     border-bottom: 2px solid #fff;
-    padding-bottom: 3px; }
+    padding-bottom: 3px;
+    -webkit-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;}
   .header .navbar-light .navbar-nav li a {
     color: #fff; }
 
