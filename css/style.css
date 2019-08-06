@@ -142,6 +142,8 @@ body {
 .footer {
   background-color: #000;
   height: 200px; }
+  .footer .inner {
+    position: relative; }
 
 h1 {
   font-size: 13em; }
