@@ -131,10 +131,11 @@ body {
     background: rgba(0, 0, 0, 0.5);
     -webkit-box-shadow: 0 2px 5px 0 rgba(125, 125, 125, 0.3);
     box-shadow: 0 2px 5px 0 rgba(125, 125, 125, 0.3); }
-  .header .navbar-nav li.active a {
+  .header .navbar-light .navbar-nav li.active a {
+    color: #e14456; }
+  .header .navbar-light .navbar-nav li a {
     color: #fff; }
-  .header .navbar-nav li a {
-    color: #fff; }
+
 
 .footer {
   background-color: #000;
