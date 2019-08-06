@@ -63,10 +63,5 @@ $('#carouselExample').on('slide.bs.carousel', function (e) {
         }
     }
 });
-$("#carouselExample").swiperight(function() {
-    $(this).carousel('prev');
-});
-$("#carouselExample").swipeleft(function() {
-    $(this).carousel('next');
-});
+
   
