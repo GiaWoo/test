@@ -14,7 +14,8 @@ $(function() {
         var ref = panels[i].attr("data-section-name");
         $(".navbar-nav .active").removeClass("active");
         $(".navbar-nav").find("a[href=\"#" + ref + "\"]").parents('li').addClass("active");
-        if($.scrollify.attr('data-section-name')=="first"){
+        $('.header').removeClass('fixed');
+        if($.scrollify.current().attr('data-section-name')=="first"){
             $('.header').addClass('fixed');
         }else{
             $('.header').removeClass('fixed');
