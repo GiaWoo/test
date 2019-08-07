@@ -15,11 +15,11 @@ $(function() {
         $(".navbar-nav .active").removeClass("active");
         $(".navbar-nav").find("a[href=\"#" + ref + "\"]").parents('li').addClass("active");
 
-        if($.scrollify.current().attr('data-section-name')=="second")
+        if($.scrollify.current().attr('data-section-name')=="first")
         {
             $('.header').addClass('fixed');
         }
-        if($.scrollify.current().attr('data-section-name')=="first")
+        if($.scrollify.current().attr('data-section-name')=="second")
         {
             $('.header').removeClass('fixed');
         }
