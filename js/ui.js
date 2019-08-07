@@ -50,6 +50,11 @@ $(function() {
       } else {
         header.addClass('fixed');
       }
+      if (scroll >= 1) {
+	 header.removeClass('fixed');
+      } else {
+	 header.addClass('fixed');
+      }
     });
     $('.owl-carousel').owlCarousel({
         //stagePadding: 50,
