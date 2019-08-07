@@ -41,9 +41,9 @@ $(function() {
         $.scrollify.next();
     });
     var header = $('header'),
-	firstSection = $('.panel1'),
+	firstSection = $('section.home'),
 	offset = firstSection.offset().top + firstSection.height() - header.height();
-    header.addClass('fixed');	
+    	header.addClass('fixed');	
     $(window).scroll(function(){
       var scroll = $(window).scrollTop();
       if (scroll >= offset) {
