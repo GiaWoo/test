@@ -136,8 +136,15 @@ body {
     color: #000; }
   .header .navbar-light .navbar-nav li a {
     color: #fff; }
-
-
+.btn_box{
+  display:inline-block;
+  position:absolute;
+  bottom:20%;
+  left:50%;
+  font-size:20px;
+  margin-left:-50px; /*박스 width값 반값집어넣으면대 -로 */}
+.btn_box .scroll_icon{
+  color:#fff;}
 .footer {
   background-color: #000;
   height: 200px; }
