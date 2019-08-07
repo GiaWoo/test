@@ -126,7 +126,7 @@ body {
   -webkit-transition: all 0.5s;
   -o-transition: all 0.5s;
   transition: all 0.5s; }
-  .header.fixed .navbar-light {
+  .header.fixed{
     background-color: #fff;
     background: rgba(0, 0, 0, 0);
     -webkit-box-shadow: 0 2px 5px 0 rgba(125, 125, 125, 0.3);
