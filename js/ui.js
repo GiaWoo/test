@@ -19,7 +19,7 @@ $(function() {
         }else{
             $('.header').removeClass('fixed');
         }
-        else if($.scrollify.current().attr('data-section-name')=="five"){
+        if($.scrollify.current().attr('data-section-name')=="five"){
             $('.navbar-nav li:last-child').addClass("active");
         }
       },
