@@ -36,6 +36,10 @@ $(function() {
         });
         return idpanel;
     };
+    $(".scroll_icon").click(function(e) {
+        e.preventDefault();
+        $.scrollify.next();
+    });
     $('.owl-carousel').owlCarousel({
         //stagePadding: 50,
         loop:true,
