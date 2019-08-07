@@ -41,19 +41,15 @@ $(function() {
         $.scrollify.next();
     });
     var header = $('header'),
-	firstSection = $('section.home'),
+	firstSection = $('.panel1'),
 	offset = firstSection.offset().top + firstSection.height() - header.height();
+    header.addClass('fixed');	
     $(window).scroll(function(){
       var scroll = $(window).scrollTop();
       if (scroll >= offset) {
         header.removeClass('fixed');
       } else {
         header.addClass('fixed');
-      }
-      if (scroll >= 1) {
-	 header.removeClass('fixed');
-      } else {
-	 header.addClass('fixed');
       }
     });
     $('.owl-carousel').owlCarousel({
