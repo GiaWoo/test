@@ -14,7 +14,6 @@ $(function() {
         var ref = panels[i].attr("data-section-name");
         $(".navbar-nav .active").removeClass("active");
         $(".navbar-nav").find("a[href=\"#" + ref + "\"]").parents('li').addClass("active");
-        $('.header').addClass('fixed');
         if($.scrollify.current().attr('data-section-name')=="first"){
             $('.header').addClass('fixed');
         }else{
@@ -25,7 +24,7 @@ $(function() {
         }
       },
       after: function(index) {
-         if ($.scrollify.current().attr('data-section-name') != "first") {
+         if ($.scrollify.current().attr('data-section-name')!="first") {
             $('.header').removeClass('fixed');
          }
       }
