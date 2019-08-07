@@ -14,20 +14,14 @@ $(function() {
         var ref = panels[i].attr("data-section-name");
         $(".navbar-nav .active").removeClass("active");
         $(".navbar-nav").find("a[href=\"#" + ref + "\"]").parents('li').addClass("active");
-
-        if($.scrollify.current().attr('data-section-name')=="first")
-        {
+        if($.scrollify.current().attr('data-section-name')=="first"){
             $('.header').addClass('fixed');
-        }
-        if($.scrollify.current().attr('data-section-name')=="second")
-        {
+        }else{
             $('.header').removeClass('fixed');
         }
-        if($.scrollify.current().attr('data-section-name')=="five")
-        {
+        else if($.scrollify.current().attr('data-section-name')=="five"){
             $('.navbar-nav li:last-child').addClass("active");
         }
-
       },
     });
     $(".navbar-nav li a").on("click",function() {
