@@ -54,7 +54,33 @@
           <!--<video controls="false" autoplay loop muted>
             <source src="http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4" type="video/mp4">
           </video>-->
+          <script type="text/javascript">
+	      var tag = document.createElement('script');
+	      tag.src = "https://www.youtube.com/iframe_api";
+	      var firstScriptTag = document.getElementsByTagName('script')[0];
+	      firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+	      var player;
+	      function onYouTubeIframeAPIReady() {
+		player = new YT.Player('player', {
+		  height: '360',
+		  width: '640',
+		  videoId: '7rJmj4unFIc',
+		  events: {
+		    'onReady': onPlayerReady,
+		    'onStateChange': onPlayerStateChange
+		  }
+		});
+	      }
+	      function onPlayerReady(event) {
+		event.target.playVideo();
+	      }
+	      function stopVideo() {
+		player.stopVideo();
+	      }
+	  </script>
 	  <div id="player" class="video"></div>
+		
           <div class="vertical-center">
               <div id="ubion-carousel" class="owl-carousel owl-theme">
                   <div class="item"><h4>1</h4></div>
