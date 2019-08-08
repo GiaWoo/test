@@ -197,8 +197,7 @@ h2 + p {
   object-fit:fill;
 }
 .home {
-  background: #6dcb94;
-  background: #3ecc98; }
+  background: #000; }
 
 .panel1 {
   background: #ec8200;
