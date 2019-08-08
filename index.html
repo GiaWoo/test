@@ -66,13 +66,18 @@
 		  height: '100'+ '%',
 		  width: '100'+ '%',
 		  videoId: '7rJmj4unFIc',
+		  playerVars: { 'autoplay': 1, 'controls': 0 },
 		  events: {
 		    'onReady': onPlayerReady,
 		  }
 		});
 	      }
 	      function onPlayerReady(event) {
-		event.target.playVideo();
+		  var embedCode = event.target.getVideoEmbedCode();
+		  event.target.playVideo();
+		  if (document.getElementById('embed-code')) {
+		    document.getElementById('embed-code').innerHTML = embedCode;
+		  }
 	      }
 	      function stopVideo() {
 		player.stopVideo();
