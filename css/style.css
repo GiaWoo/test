@@ -110,18 +110,11 @@ abbr, acronym {
   margin: 0;
   padding: 0;
   background: #fff; }
-  
-  html {
-    -webkit-text-size-adjust: antialiased;
-    -moz-osx-font-smoothing: grayscale; }
-  
-  body {
-    font-family: 'nsR', sans-serif, -apple-system;
-    font-size: 18px;
-    -webkit-transform: skew(-0.03deg);
-    -ms-transform: skew(-0.03deg);
-    transform: skew(-0.03deg);
-    color: white; }
+
+body {
+  color: white;
+  font-size: 62.5%;
+  font-family: 'Lato', sans-serif; }
 
 .header {
   position: fixed;
