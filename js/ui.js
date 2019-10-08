@@ -4,12 +4,13 @@ $(function() {
       sectionName:false,
       interstitialSection:".footer",
       offset: 0,
-      scrollbars:false,
+      scrollbars:true,
+      overflowScroll:true,
+      touchScroll: true,
       standardScrollElements: "",
       updateHash: true,
-      touchScroll: true,
       easing: "easeOutExpo",
-      scrollSpeed: 800,
+      scrollSpeed: 1000,
       before:function(i,panels) {
         var ref = panels[i].attr("data-section-name");
         $(".navbar-nav .active").removeClass("active");
@@ -52,23 +53,55 @@ $(function() {
         header.addClass('fixed');
       }
     });
-    $('.owl-carousel').owlCarousel({
-        stagePadding: 50,
+    $(".navbar-toggler").on("click", function() {
+        // "navbar-toggler"에 "toggler_active"라는 클래스를 추가하고, 다시 한 번 클릭하면 제거함.
+        $(this).toggleClass("toggler_active");
+    });
+    $('.sub1 .owl-carousel').owlCarousel({
+        stagePadding: 0,
         loop:true,
-        margin:10,
+        autoplay:true,
+        autoplayTimeout:2000,
+        autoplayHoverPause:true,
+        margin:1,
         nav:true,
-        responsive:{
-            0:{
+        responsiveClass:true,
+        responsive : {
+            0 : {
+                items:1,
+                stagePadding:30,
+                margin:42,
+            },
+            768 : {
+                items:2
+            },
+            992 : {
+                items:3
+            }
+        }
+    });
+    $('.footer .owl-carousel').owlCarousel({
+        stagePadding: 60,
+        loop:true,
+        autoplay:true,
+        autoplayTimeout:2000,
+        autoplayHoverPause:true,
+        margin:40,
+        nav:true,
+        responsiveClass:true,
+        responsive : {
+            0 : {
                 items:1
             },
-            600:{
+            768 : {
+                items:2
+            },
+            992 : {
                 items:3
             },
-            1000:{
-                items:5
+            1200 : {
+                items:4
             }
         }
     });
 });
-
-  
